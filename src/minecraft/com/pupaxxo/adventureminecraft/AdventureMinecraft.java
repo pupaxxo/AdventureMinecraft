@@ -8,7 +8,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = "AdventureMinecraft_pupaxxo", name = "AdventureMinecraft", version = "0.1")
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(clientSideRequired = true, serverSideRequired = true)
 public class AdventureMinecraft {
 	@PreInit
     public void preInit(FMLPreInitializationEvent event) {
