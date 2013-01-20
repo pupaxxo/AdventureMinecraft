@@ -14,6 +14,7 @@ public class AdventureMinecraft {
     public void preInit(FMLPreInitializationEvent event) {
 		
 	}
+	
 	@Init
 	public void load(FMLInitializationEvent event) 
 	{
