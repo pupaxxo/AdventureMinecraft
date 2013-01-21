@@ -11,6 +11,7 @@ public class CreativeTabAM extends CreativeTabs{
 	public CreativeTabAM(int par1, String par2Str) 
 	{
        super(par1, par2Str);
+       this.setBackgroundImageName("../../com/pupaxxo/adventureminecraft/resources/list_items.png");
     }
 
     @SideOnly(Side.CLIENT)
@@ -21,4 +22,5 @@ public class CreativeTabAM extends CreativeTabs{
 
         return Items.asphaltator.itemID;
     }
+    
 }
