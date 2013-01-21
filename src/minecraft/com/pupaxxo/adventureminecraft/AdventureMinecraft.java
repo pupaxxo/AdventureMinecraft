@@ -1,5 +1,6 @@
 package com.pupaxxo.adventureminecraft;
 
+import com.pupaxxo.adventureminecraft.blocks.Blocks;
 import com.pupaxxo.adventureminecraft.config.Config;
 
 import cpw.mods.fml.common.Mod;
@@ -25,6 +26,6 @@ public class AdventureMinecraft {
 	@Init
 	public void load(FMLInitializationEvent event) 
 	{
-		
+		Blocks.registerBlock(configs);
 	}
 }

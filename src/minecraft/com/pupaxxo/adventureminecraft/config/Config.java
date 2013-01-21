@@ -15,6 +15,9 @@ public class Config {
         Property checkup = config.get(Configuration.CATEGORY_GENERAL, "Check updates", true);
         checkup.comment = "True fot check if there are new version of the mods , false if you don't want the notify.";
         configs[0] = checkup.getBoolean(true);
+        Property id1 = config.get(Configuration.CATEGORY_GENERAL, "BlockDarkDirt", 2000);
+        id1.comment = "The ID for block dark dirt";
+        configs[1] = id1.getInt();
 		config.save();
 		return configs;
 	}
