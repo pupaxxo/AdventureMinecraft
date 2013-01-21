@@ -5,6 +5,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import com.pupaxxo.adventureminecraft.blocks.Blocks;
 import com.pupaxxo.adventureminecraft.config.Config;
 import com.pupaxxo.adventureminecraft.core.Reference;
+import com.pupaxxo.adventureminecraft.crafting.CraftingManager;
 import com.pupaxxo.adventureminecraft.creativetab.CreativeTabAM;
 import com.pupaxxo.adventureminecraft.item.Items;
 import com.pupaxxo.adventureminecraft.proxy.CommonProxy;
@@ -47,5 +48,7 @@ public class AdventureMinecraft {
 		Blocks.registerBlocks(configs);
 		//Register items
 		Items.registerItems(configs);
+		//Crafing
+		CraftingManager.Crafting();
 	}
 }
