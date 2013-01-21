@@ -1,7 +1,12 @@
 package com.pupaxxo.adventureminecraft;
 
+import net.minecraft.creativetab.CreativeTabs;
+
 import com.pupaxxo.adventureminecraft.blocks.Blocks;
 import com.pupaxxo.adventureminecraft.config.Config;
+import com.pupaxxo.adventureminecraft.core.Reference;
+import com.pupaxxo.adventureminecraft.creativetab.CreativeTabAM;
+import com.pupaxxo.adventureminecraft.item.Items;
 import com.pupaxxo.adventureminecraft.proxy.CommonProxy;
 
 import cpw.mods.fml.common.Mod;
@@ -11,15 +16,18 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "AdventureMinecraft_pupaxxo", name = "AdventureMinecraft", version = "0.1")
-@NetworkMod(clientSideRequired = true, serverSideRequired = true)
+@Mod(modid = Reference.modid, name = Reference.modname, version = Reference.version)
+@NetworkMod(clientSideRequired = Reference.clientSideRequired, serverSideRequired = Reference.serverSideRequired)
 public class AdventureMinecraft {
-	@SidedProxy(clientSide = "com.pupaxxo.adventureminecraft.proxy.ClientProxy", serverSide = "com.pupaxxo.adventureminecraft.proxy.CommonProxyl")
+	@SidedProxy(clientSide = Reference.clientProxy, serverSide = Reference.commondProxy)
 	
 	public static CommonProxy proxy;
 	public Object[] configs;
 	public boolean checkUpdates;
+	public static CreativeTabs tabsAM = new CreativeTabAM(CreativeTabs.getNextID(), Reference.modid);
+	
 	@PreInit
     public void preInit(FMLPreInitializationEvent event) 
 	{
@@ -31,7 +39,13 @@ public class AdventureMinecraft {
 	@Init
 	public void load(FMLInitializationEvent event) 
 	{
+		//Register lang for creative tabs
+		LanguageRegistry.instance().addStringLocalization("itemGroup." + Reference.modid, "en_US", "Adventure Minecraft");
+		//Register proxy
 		proxy.registerRenderThings();
-		Blocks.registerBlock(configs);
+		//Register blocks
+		Blocks.registerBlocks(configs);
+		//Register items
+		Items.registerItems(configs);
 	}
 }

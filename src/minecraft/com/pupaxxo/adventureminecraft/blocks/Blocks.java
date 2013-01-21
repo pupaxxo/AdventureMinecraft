@@ -13,11 +13,11 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class Blocks {
 	private final static String[] subNames ={"Asphalt", "White Aspahlt"};
 	public static Block darkDirt , asphalt;
-	public static Item asphaltator;
-	public static void registerBlock(Object[] configs){
+	public static void registerBlocks(Object[] configs){
 		//ID
 		int id1 = Integer.parseInt(configs[1].toString());
 		int id2 = Integer.parseInt(configs[2].toString());
+		int id3 = Integer.parseInt(configs[3].toString());
 		//DarkDirt
 		darkDirt = new BlockDarkDirt(id1,0).setBlockName("DarkDirt");
 		GameRegistry.registerBlock(darkDirt);
@@ -30,8 +30,5 @@ public class Blocks {
 			ItemStack multiBlockStack = new ItemStack(asphalt, 1, ix);
 			LanguageRegistry.addName(multiBlockStack, subNames[multiBlockStack.getItemDamage()]);
 		}
-		//Asphaltator
-		asphaltator = new ItemAsphaltator(2003);
-		GameRegistry.registerItem(asphaltator, "Asphaltator");
 	}
 }

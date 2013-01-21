@@ -2,6 +2,8 @@ package com.pupaxxo.adventureminecraft.blocks;
 
 import java.util.List;
 
+import com.pupaxxo.adventureminecraft.AdventureMinecraft;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -15,7 +17,7 @@ public class BlockAsphalt extends Block{
 		super(id, Material.rock);
 		this.setHardness(100.0F);
 		this.setResistance(4000.0F);
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setCreativeTab(AdventureMinecraft.tabsAM);
 	}
 	public String getTextureFile()
     {
