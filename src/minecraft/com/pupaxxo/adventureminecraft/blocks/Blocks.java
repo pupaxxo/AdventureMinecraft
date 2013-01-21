@@ -12,7 +12,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Blocks {
 	private final static String[] subNames ={"Asphalt", "White Aspahlt"};
-	public static Block darkDirt , asphalt;
+	public static Block darkDirt , asphalt , portal;
 	public static void registerBlocks(Object[] configs){
 		//ID
 		int id1 = Integer.parseInt(configs[1].toString());
@@ -30,5 +30,10 @@ public class Blocks {
 			ItemStack multiBlockStack = new ItemStack(asphalt, 1, ix);
 			LanguageRegistry.addName(multiBlockStack, subNames[multiBlockStack.getItemDamage()]);
 		}
+		//Portal Block
+		portal = new BlockCustomPortal(251, 4).setBlockName("Portal1");
+		GameRegistry.registerBlock(portal, "Portal1");
+		LanguageRegistry.addName(portal, "Portal");
 	}
+	
 }

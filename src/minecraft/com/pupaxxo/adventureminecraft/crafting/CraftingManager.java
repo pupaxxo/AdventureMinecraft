@@ -17,7 +17,6 @@ public class CraftingManager {
 		//Crafting for white asphalt
 		FurnaceRecipes.smelting().addSmelting(Blocks.asphalt.blockID, 0, new ItemStack(Blocks.asphalt.blockID, 1, 1), 0f);
 		//Crafting for asphaltator
-		GameRegistry.addRecipe(new ItemStack(Items.asphaltator), "QWE", "WRT", "RTY",
-		        'Q', new ItemStack(Block.stone), 'W', new ItemStack(Item.coal) , 'E' , new ItemStack(Item.diamond) , 'R' , new ItemStack(Item.stick) , 'T' , new ItemStack(287 , 1 ,0) , 'Y' , new ItemStack(351 , 1 ,14));
+		GameRegistry.addRecipe(new ItemStack(Items.asphaltator), "QWE", "WRT", "RTY",'Q', new ItemStack(Block.stone), 'W', new ItemStack(Item.coal) , 'E' , new ItemStack(Item.diamond) , 'R' , new ItemStack(Item.stick) , 'T' , new ItemStack(287 , 1 ,0) , 'Y' , new ItemStack(351 , 1 ,14));
 	}
 }
