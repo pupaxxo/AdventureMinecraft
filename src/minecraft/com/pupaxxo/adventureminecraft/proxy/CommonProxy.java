@@ -1,6 +1,6 @@
 package com.pupaxxo.adventureminecraft.proxy;
 
-public class CommonProxyTutorial {
+public class CommonProxy {
 	 public void registerRenderThings()
 	    {
 	        

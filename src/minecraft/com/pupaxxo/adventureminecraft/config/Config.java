@@ -15,9 +15,8 @@ public class Config {
         Property checkup = config.get(Configuration.CATEGORY_GENERAL, "Check updates", true);
         checkup.comment = "True fot check if there are new version of the mods , false if you don't want the notify.";
         configs[0] = checkup.getBoolean(true);
-        Property id1 = config.get(Configuration.CATEGORY_GENERAL, "BlockDarkDirt", 2000);
-        id1.comment = "The ID for block dark dirt";
-        configs[1] = id1.getInt();
+        configs[1] = addInt(2000,config,"BlockDarkDirt","The ID for block dark dirt",Configuration.CATEGORY_BLOCK);
+        configs[2] = addInt(2001,config,"BlockAsphalt","The ID for block asphalt",Configuration.CATEGORY_BLOCK);
 		config.save();
 		return configs;
 	}
@@ -27,5 +26,10 @@ public class Config {
 		} else {
 			return false;
 		}
+	}
+	public static int addInt(int base , Configuration config , String name , String comment , String category){
+		Property conf = config.get(category, name, base);
+		conf.comment = comment;
+        return conf.getInt();
 	}
 }
