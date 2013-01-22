@@ -37,7 +37,7 @@ public class Blocks {
 		//GameRegistry.registerBlock(portal, "Portal1");
 		//LanguageRegistry.addName(portal, "Portal");
 		//Glass Block
-		glassModified = new BlockGlassModified(id4, 4, Material.glass, false).setHardness(0.3F);
+		glassModified = new BlockGlassModified(id4, 4, Material.glass, false).setHardness(0.3F).setBlockName("glassmodified");
 		GameRegistry.registerBlock(glassModified);
 		LanguageRegistry.addName(glassModified, "Industrial glass");
 	}
