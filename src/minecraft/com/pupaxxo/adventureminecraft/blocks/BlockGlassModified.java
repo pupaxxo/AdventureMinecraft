@@ -5,6 +5,12 @@ import java.util.Random;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+
+import com.pupaxxo.adventureminecraft.AdventureMinecraft;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -62,4 +68,23 @@ public class BlockGlassModified extends BlockBreakable
     {
             return "/com/pupaxxo/adventureminecraft/resources/terrains.png";
     }
+    @Override
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int i, float f, float g, float t){
+    // Just making an instance of the TileEntity that the player clicked on
+    TileEntity tile_entity = world.getBlockTileEntity(x, y, z);
+
+    // Checking if the TileEntity is nothing or if the player is sneaking
+    if(tile_entity == null || player.isSneaking()){
+    // Returns false so it doesn't update anything
+    return false;
+    }
+    // opens the UI if the later is not met, the method player.openGui() has 6 params
+    // @param TutorialMod.instance, is just the instance of the TutorialMod
+    // @param 0, this is the UI id, this can be changed in the GUI handler, and will open a different UI if chosen to do so
+    // @param x, y, z, the players current player x, y, z coords
+    player.openGui(AdventureMinecraft.instance, 0, world, x, y, z);
+    // Returns true to force an update
+    return true;
+    }
+
 }
