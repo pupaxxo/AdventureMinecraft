@@ -1,6 +1,7 @@
 package com.pupaxxo.adventureminecraft.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -12,12 +13,13 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Blocks {
 	private final static String[] subNames ={"Asphalt", "White Aspahlt"};
-	public static Block darkDirt , asphalt , portal;
+	public static Block darkDirt , asphalt , portal , glassModified;
 	public static void registerBlocks(Object[] configs){
 		//ID
 		int id1 = Integer.parseInt(configs[1].toString());
 		int id2 = Integer.parseInt(configs[2].toString());
 		int id3 = Integer.parseInt(configs[3].toString());
+		int id4 = Integer.parseInt(configs[4].toString());
 		//DarkDirt
 		darkDirt = new BlockDarkDirt(id1,0).setBlockName("DarkDirt");
 		GameRegistry.registerBlock(darkDirt);
@@ -31,9 +33,13 @@ public class Blocks {
 			LanguageRegistry.addName(multiBlockStack, subNames[multiBlockStack.getItemDamage()]);
 		}
 		//Portal Block
-		portal = new BlockCustomPortal(251, 4).setBlockName("Portal1");
-		GameRegistry.registerBlock(portal, "Portal1");
-		LanguageRegistry.addName(portal, "Portal");
+		//portal = new BlockCustomPortal(251, 4).setBlockName("Portal1");
+		//GameRegistry.registerBlock(portal, "Portal1");
+		//LanguageRegistry.addName(portal, "Portal");
+		//Glass Block
+		glassModified = new BlockGlassModified(id4, 4, Material.glass, false).setHardness(0.3F);
+		GameRegistry.registerBlock(glassModified);
+		LanguageRegistry.addName(glassModified, "Industrial glass");
 	}
 	
 }

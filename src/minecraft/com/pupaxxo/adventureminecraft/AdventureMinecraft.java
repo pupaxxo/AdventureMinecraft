@@ -52,6 +52,6 @@ public class AdventureMinecraft {
 		//Crafing
 		CraftingManager.Crafting();
 		//Dimension
-		Dimension.DimensionInit();
+		//Dimension.DimensionInit();
 	}
 }
