@@ -13,13 +13,14 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Blocks {
 	private final static String[] subNames ={"Asphalt", "White Aspahlt"};
-	public static Block darkDirt , asphalt , portal , glassModified;
+	public static Block darkDirt , asphalt , portal , glassModified , modernCrafting;
 	public static void registerBlocks(Object[] configs){
 		//ID
 		int id1 = Integer.parseInt(configs[1].toString());
 		int id2 = Integer.parseInt(configs[2].toString());
 		int id3 = Integer.parseInt(configs[3].toString());
 		int id4 = Integer.parseInt(configs[4].toString());
+		int id5 = Integer.parseInt(configs[5].toString());
 		//DarkDirt
 		darkDirt = new BlockDarkDirt(id1,0).setBlockName("DarkDirt");
 		GameRegistry.registerBlock(darkDirt);
@@ -40,6 +41,10 @@ public class Blocks {
 		glassModified = new BlockGlassModified(id4, 4, Material.glass, false).setHardness(0.3F).setBlockName("glassmodified");
 		GameRegistry.registerBlock(glassModified);
 		LanguageRegistry.addName(glassModified, "Industrial glass");
+		//ModernCrafting
+		modernCrafting = new BlockModernCrafting(id5 , 1).setBlockName("modernCrafting");
+		GameRegistry.registerBlock(modernCrafting);
+		LanguageRegistry.addName(modernCrafting, "Modern Crafting Table");
 	}
 	
 }

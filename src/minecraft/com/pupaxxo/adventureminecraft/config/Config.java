@@ -19,6 +19,7 @@ public class Config {
         configs[2] = addInt(2001,config,"BlockAsphalt","The ID for block asphalt",Configuration.CATEGORY_BLOCK);
         configs[3] = addInt(2002,config,"ItemAsphaltator","The ID for the asphaltator",Configuration.CATEGORY_ITEM);
         configs[4] = addInt(2003,config,"BlockGlass","The ID for the glass block",Configuration.CATEGORY_BLOCK);
+        configs[5] = addInt(2004,config,"BlockModernCrafting","The ID for the modern craftinf table",Configuration.CATEGORY_BLOCK);
 		config.save();
 		return configs;
 	}

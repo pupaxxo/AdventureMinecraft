@@ -2,6 +2,8 @@ package com.pupaxxo.adventureminecraft.blocks;
 
 import java.util.Random;
 
+import com.pupaxxo.adventureminecraft.AdventureMinecraft;
+
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -13,7 +15,7 @@ public class BlockGlassModified extends BlockBreakable
     public BlockGlassModified(int par1, int par2, Material par3Material, boolean par4)
     {
         super(par1, par2, par3Material, par4);
-        this.setCreativeTab(CreativeTabs.tabBlock);
+        this.setCreativeTab(AdventureMinecraft.tabsAM);
     }
 
     /**
@@ -60,6 +62,6 @@ public class BlockGlassModified extends BlockBreakable
     }
     public String getTextureFile()
     {
-            return "/com/pupaxxo/adventureminecraft/resources/terrains.png";
+            return "/com/pupaxxo/adventureminecraft/resources/terrainsHD.png";
     }
 }

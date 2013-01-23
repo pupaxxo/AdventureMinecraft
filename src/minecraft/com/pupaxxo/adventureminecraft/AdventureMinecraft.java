@@ -13,6 +13,7 @@ import com.pupaxxo.adventureminecraft.proxy.CommonProxy;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -24,7 +25,8 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(clientSideRequired = Reference.clientSideRequired, serverSideRequired = Reference.serverSideRequired)
 public class AdventureMinecraft {
 	@SidedProxy(clientSide = Reference.clientProxy, serverSide = Reference.commondProxy)
-	
+	//@Instance("AdventureMinecraft")
+	//public static AdventureMinecraft instance = new AdventureMinecraft();
 	public static CommonProxy proxy;
 	public Object[] configs;
 	public boolean checkUpdates;
