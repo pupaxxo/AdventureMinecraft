@@ -20,6 +20,11 @@ public class Config {
         configs[3] = addInt(2002,config,"ItemAsphaltator","The ID for the asphaltator",Configuration.CATEGORY_ITEM);
         configs[4] = addInt(2003,config,"BlockGlass","The ID for the glass block",Configuration.CATEGORY_BLOCK);
         configs[5] = addInt(2004,config,"BlockModernCrafting","The ID for the modern craftinf table",Configuration.CATEGORY_BLOCK);
+		configs[100] = addBoolean(true , config , "BlockDarkDirt_enabled" , "True = enabled , false = disabled" , Configuration.CATEGORY_GENERAL);
+		configs[101] = addBoolean(true , config , "BlockAsphalt_enabled" , "True = enabled , false = disabled" , Configuration.CATEGORY_GENERAL);
+		configs[102] = addBoolean(true , config , "ItemAsphaltator_enabled" , "True = enabled , false = disabled" , Configuration.CATEGORY_GENERAL);
+		configs[103] = addBoolean(true , config , "BlockGlass_enabled" , "True = enabled , false = disabled" , Configuration.CATEGORY_GENERAL);
+		configs[104] = addBoolean(true , config , "BlockModernCrafting_enabled" , "True = enabled , false = disabled" , Configuration.CATEGORY_GENERAL);
 		config.save();
 		return configs;
 	}
@@ -34,5 +39,10 @@ public class Config {
 		Property conf = config.get(category, name, base);
 		conf.comment = comment;
         return conf.getInt();
+	}
+	public static boolean addBoolean(boolean base , Configuration config , String name , String comment , String category){
+		Property conf = config.get(category, name, base);
+		conf.comment = comment;
+        return conf.getBoolean(true);
 	}
 }
