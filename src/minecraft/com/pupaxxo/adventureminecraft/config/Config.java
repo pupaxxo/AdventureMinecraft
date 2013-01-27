@@ -9,7 +9,7 @@ public class Config {
 		
 	}
 	public static Object[] load(FMLPreInitializationEvent event) {
-		Object[] configs = new Object[100];
+		Object[] configs = new Object[1000];
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
         Property checkup = config.get(Configuration.CATEGORY_GENERAL, "Check updates", true);
