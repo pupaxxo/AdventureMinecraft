@@ -2,6 +2,9 @@ package com.pupaxxo.adventureminecraft.item;
 
 import java.util.List;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;

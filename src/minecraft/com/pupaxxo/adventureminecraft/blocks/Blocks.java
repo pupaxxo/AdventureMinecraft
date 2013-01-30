@@ -1,20 +1,20 @@
 package com.pupaxxo.adventureminecraft.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockWall;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import com.pupaxxo.adventureminecraft.blocks.itemBlock.ItemBlockAsphalt;
 import com.pupaxxo.adventureminecraft.config.Config;
-import com.pupaxxo.adventureminecraft.item.ItemAsphaltator;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Blocks {
 	private final static String[] subNames ={"Asphalt", "White Aspahlt"};
-	public static Block darkDirt , asphalt , portal , glassModified , modernCrafting;
+	public static Block darkDirt , asphalt , portal , glassModified , modernCrafting , wall;
 	public static void registerBlocks(Object[] configs){
 		//ID
 		int id1 = Integer.parseInt(configs[1].toString());
@@ -54,6 +54,10 @@ public class Blocks {
 		GameRegistry.registerBlock(modernCrafting);
 		LanguageRegistry.addName(modernCrafting, "Modern Crafting Table");
 		}
+		//BlockWall
+		wall = new BlockWall(3000,modernCrafting).setTextureFile("/com/pupaxxo/adventureminecraft/resources/terrains.png");
+		GameRegistry.registerBlock(wall);
+		LanguageRegistry.addName(wall,"AsphaltWall");
 	}
 	
 }
