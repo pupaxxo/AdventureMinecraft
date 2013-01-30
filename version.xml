@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>Version lookup for Adventure Minecraft. Format is "Current Version Number|URL to update page"</comment>
+	<entry key="Minecraft 1.4.6">BETA 0.1|http://pupax.dyndns.org:8080/job/AdventureMinecraft/lastSuccessfulBuild/artifact/</entry>
+	<entry key="Minecraft 1.4.7">BETA 0.1|http://pupax.dyndns.org:8080/job/AdventureMinecraft/lastSuccessfulBuild/artifact/</entry>
+</properties>

@@ -19,7 +19,7 @@ public class CommandAM extends CommandBase
 		if (var2.length < 1) {
 			var1.sendChatToPlayer("This is AdventureMinecraft command , used for get version.");
 		} else if (var2[0].equals("version")){
-			var1.sendChatToPlayer("Adventure minecraft version: " + Reference.version);
+			var1.sendChatToPlayer("Adventure minecraft version: " + Reference.VERSION);
 		} else {
 	        throw new WrongUsageException("/av version", new Object[0]);
 	    }

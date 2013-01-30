@@ -8,6 +8,7 @@ import com.pupaxxo.adventureminecraft.core.Reference;
 import com.pupaxxo.adventureminecraft.crafting.CraftingManager;
 import com.pupaxxo.adventureminecraft.creativetab.CreativeTabAM;
 import com.pupaxxo.adventureminecraft.handler.CommandHandler;
+import com.pupaxxo.adventureminecraft.helper.VersionChecker;
 import com.pupaxxo.adventureminecraft.item.Items;
 import com.pupaxxo.adventureminecraft.proxy.CommonProxy;
 
@@ -22,7 +23,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = Reference.modid, name = Reference.modname, version = Reference.version)
+@Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
 @NetworkMod(clientSideRequired = Reference.clientSideRequired, serverSideRequired = Reference.serverSideRequired)
 public class AdventureMinecraft {
 	@SidedProxy(clientSide = Reference.clientProxy, serverSide = Reference.commondProxy)
@@ -31,7 +32,7 @@ public class AdventureMinecraft {
 	public static CommonProxy proxy;
 	public Object[] configs;
 	public boolean checkUpdates;
-	public static CreativeTabs tabsAM = new CreativeTabAM(CreativeTabs.getNextID(), Reference.modid);
+	public static CreativeTabs tabsAM = new CreativeTabAM(CreativeTabs.getNextID(), Reference.MODID);
 	
 	@PreInit
     public void preInit(FMLPreInitializationEvent event) 
@@ -45,7 +46,7 @@ public class AdventureMinecraft {
 	public void load(FMLInitializationEvent event) 
 	{
 		//Register lang for creative tabs
-		LanguageRegistry.instance().addStringLocalization("itemGroup." + Reference.modid, "en_US", "Adventure Minecraft");
+		LanguageRegistry.instance().addStringLocalization("itemGroup." + Reference.MODID, "en_US", "Adventure Minecraft");
 		//Register proxy
 		proxy.registerRenderThings();
 		//Register blocks
@@ -56,6 +57,9 @@ public class AdventureMinecraft {
 		CraftingManager.Crafting();
 		//Dimension
 		//Dimension.DimensionInit();
+		if (configs[0].equals("true")) {
+			VersionChecker.execute();
+		}
 	}
 	@ServerStarting
 	public void serverStarting(FMLServerStartingEvent event) 
