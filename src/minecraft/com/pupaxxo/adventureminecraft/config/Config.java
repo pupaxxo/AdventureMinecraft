@@ -1,6 +1,6 @@
 package com.pupaxxo.adventureminecraft.config;
 
-import com.pupaxxo.adventureminecraft.helper.VersionChecker;
+import com.pupaxxo.adventureminecraft.helper.VersionHelper;
 
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.Property;

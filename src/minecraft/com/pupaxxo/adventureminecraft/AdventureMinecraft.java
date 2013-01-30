@@ -8,7 +8,8 @@ import com.pupaxxo.adventureminecraft.core.Reference;
 import com.pupaxxo.adventureminecraft.crafting.CraftingManager;
 import com.pupaxxo.adventureminecraft.creativetab.CreativeTabAM;
 import com.pupaxxo.adventureminecraft.handler.CommandHandler;
-import com.pupaxxo.adventureminecraft.helper.VersionChecker;
+import com.pupaxxo.adventureminecraft.helper.LogHelper;
+import com.pupaxxo.adventureminecraft.helper.VersionHelper;
 import com.pupaxxo.adventureminecraft.item.Items;
 import com.pupaxxo.adventureminecraft.proxy.CommonProxy;
 
@@ -40,6 +41,12 @@ public class AdventureMinecraft {
 		//Load configuration file 
 		configs = Config.load(event);
 		checkUpdates = Config.toBoolean(configs[0].toString());
+		//Log helper
+		LogHelper.init();
+		//Check updates
+		//if (checkUpdates) {
+			VersionHelper.execute();
+		//}
 	}
 	
 	@Init
@@ -57,9 +64,6 @@ public class AdventureMinecraft {
 		CraftingManager.Crafting();
 		//Dimension
 		//Dimension.DimensionInit();
-		if (configs[0].equals("true")) {
-			VersionChecker.execute();
-		}
 	}
 	@ServerStarting
 	public void serverStarting(FMLServerStartingEvent event) 

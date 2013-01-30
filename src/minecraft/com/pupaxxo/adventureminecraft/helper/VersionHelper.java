@@ -3,12 +3,14 @@ package com.pupaxxo.adventureminecraft.helper;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.pupaxxo.adventureminecraft.core.Reference;
 
 import cpw.mods.fml.common.Loader;
 
-public class VersionChecker implements Runnable{
+public class VersionHelper implements Runnable{
 	public int result;
 	public static final byte UNINITIALIZED = 0;
 	public static final byte CURRENT = 1;
@@ -18,7 +20,7 @@ public class VersionChecker implements Runnable{
 	public static Properties remoteVersionProperties = new Properties();
 	public static String remoteVersion = null;
     public static String remoteUpdateLocation = null;
-    private static VersionChecker instance = new VersionChecker();
+    private static VersionHelper instance = new VersionHelper();
     
 	@Override
 	public void run() {
@@ -26,7 +28,7 @@ public class VersionChecker implements Runnable{
 	        result = UNINITIALIZED;
 
 	        try {
-	            URL remoteVersionURL = new URL("");
+	            URL remoteVersionURL = new URL("http://raw.github.com/pupaxxo/AdventureMinecraft/master/version.xml");
 	            remoteVersionRepoStream = remoteVersionURL.openStream();
 	            remoteVersionProperties.loadFromXML(remoteVersionRepoStream);
 
@@ -45,6 +47,7 @@ public class VersionChecker implements Runnable{
 	            result = OUTDATED;
 	        }
 	        catch (Exception e) {
+	        	//e.printStackTrace();
 	        }
 	        finally {
 	            if (result == UNINITIALIZED) {
@@ -59,13 +62,14 @@ public class VersionChecker implements Runnable{
 	            catch (Exception ex) {
 	            }
 	        }
-	        
 	        if (result == ERROR){
-	        	System.out.println("Error while checkin version of Adventure Minecraft , current version is " + Reference.VERSION + ".");
-	        } else if (result == OUTDATED) {
-	        	System.out.println("Outdated version of Adventure Minecraft, new version " + remoteVersion + " you can download it at " + remoteUpdateLocation + " and you've got the version: " + Reference.VERSION + ".");
+	        	LogHelper.log(Level.SEVERE,"Error while checkin version of Adventure Minecraft , current version is " + Reference.VERSION + ".");
+	        } else if (result == OUTDATED) {        	
+	        	LogHelper.log(Level.WARNING,"Outdated version of Adventure Minecraft, new version " + remoteVersion + " you can download it at " + remoteUpdateLocation + " and you've got the version: " + Reference.VERSION + ".");
 	        } else if (result == CURRENT) {
-	        	System.out.println("You've got an updated version of Adventure Minecraft " + Reference.VERSION + ".");
+	        	LogHelper.log(Level.INFO,"You've got an updated version of Adventure Minecraft " + Reference.VERSION + ".");
+	        } else {
+	        	LogHelper.log(Level.SEVERE,"Error while checkin version of Adventure Minecraft , current version is " + Reference.VERSION + ".");
 	        }
 	}
 	public static void execute() {
