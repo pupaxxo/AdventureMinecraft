@@ -54,10 +54,6 @@ public class Blocks {
 		GameRegistry.registerBlock(modernCrafting);
 		LanguageRegistry.addName(modernCrafting, "Modern Crafting Table");
 		}
-		//BlockWall
-		wall = new BlockWall(3000,modernCrafting).setTextureFile("/com/pupaxxo/adventureminecraft/resources/terrains.png");
-		GameRegistry.registerBlock(wall);
-		LanguageRegistry.addName(wall,"AsphaltWall");
 	}
 	
 }
