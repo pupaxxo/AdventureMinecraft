@@ -1,0 +1,19 @@
+[
+    {
+        "modid": "AdventureMinecraft_pupaxxo",
+        "name": "Adventure Minecraft",
+        "description": "This mods try to add a very adventure to minecraft with quest,new world,... ",
+        "version": "",
+        "credits": "Created by Pupaxxo with Michele Beccari",
+        "logoFile": "/com/pupaxxo/adventureminecraft/resources/logo_mini.png",
+        "mcversion": "",
+        "url": "http://pupax.it/PupaxCraft/forum",
+        "updateUrl": "",
+        "authors": [ "Pupax", "MicheleBecccari" ],
+        "parent":"",
+        "screenshots": [],
+        "dependencies": [
+        "mod_MinecraftForge"
+        ]
+    }
+]
